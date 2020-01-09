@@ -1,0 +1,92 @@
+<?php
+
+/**
+ * @file
+ * Contains custom_blocks.module.
+ */
+
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use GuzzleHttp\Exception\RequestException;
+
+/**
+ * Implements hook_help().
+ */
+function custom_blocks_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the custom_blocks module.
+    case 'help.page.custom_blocks':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Custom blocks types to retrieve data with external API') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function custom_blocks_theme() {
+  return [
+    'custom_blocks' => [
+      'render element' => 'children',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_cron().
+ */
+function custom_blocks_cron() {
+  // 1. Get a list of blocks.
+  $blocks_ids = \Drupal::entityQuery('block_content')
+    ->condition('type', 'stock_exchange_rate_card')
+    ->execute();
+  /** @var Drupal\block_content\Entity\BlockContent $storage */
+  $storage = \Drupal::entityTypeManager()
+    ->getStorage('block_content');
+
+  $blocks = $storage->loadMultiple($blocks_ids);
+
+  $client = \Drupal::httpClient();
+  $data = [];
+
+  try {
+    // 2. Build query with list of symbols.
+    $codes = array_map(function($block) {
+      return $block->field_symbol[0]->value ?? '';
+    }, $blocks);
+
+    $response = $client->request('GET', 'https://api.worldtradingdata.com/api/v1/stock', [
+      'query' => [
+        'symbol' => join(',', $codes),
+        'api_token' => 'demo',
+      ],
+    ]);
+
+    // 3. Parse JSON data into array.
+    if ($response->getStatusCode() === 200) {
+      $body = json_decode((string) $response->getBody());
+      $data = $body->data ?? [];
+    }
+  }
+  catch (RequestException $e) {
+    watchdog_exception('custom_blocks', $e);
+  }
+
+
+  // 4. Map data to every block and save it.
+  /** @var Drupal\block_content\Entity\BlockContent $block */
+  foreach ($blocks as $block) {
+    foreach ($data as $item) {
+      if ($block->field_symbol->getString() && $item->symbol && $block->field_symbol->getString() == $item->symbol) {
+        $block->set('field_last_price', $item->price);
+        $block->set('field_change', $item->change_pct);
+        $storage->save($block);
+      }
+    }
+  }
+
+}

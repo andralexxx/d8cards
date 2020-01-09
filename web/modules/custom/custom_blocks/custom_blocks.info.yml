@@ -1,0 +1,7 @@
+name: 'Custom Blocks'
+type: module
+description: 'Custom blocks types to retrive data with external API'
+core: 8.x
+package: 'Custom'
+dependencies:
+  - block_content
