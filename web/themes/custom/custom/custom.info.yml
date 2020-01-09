@@ -1,0 +1,9 @@
+name: Custom
+type: theme
+description: 'My Awesome theme'
+package: Other
+core: 8.x
+libraries:
+  - custom/global-styling
+ 
+base theme: bartik
