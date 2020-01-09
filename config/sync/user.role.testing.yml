@@ -1,0 +1,10 @@
+uuid: ac4632de-2651-47a8-8d47-ce2b4c2460e8
+langcode: en
+status: true
+dependencies: {  }
+id: testing
+label: testing
+weight: 3
+is_admin: null
+permissions:
+  - 'administer blocks'

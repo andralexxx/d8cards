@@ -1,0 +1,24 @@
+uuid: 0d1dc934-34a3-4ec4-b226-8271baa88be2
+langcode: en
+status: true
+dependencies: {  }
+id: mongo_test
+label: Mongo_test
+label_plural: 'Mongo test'
+description: ''
+read_only: true
+field_mappings:
+  id:
+    value: _id
+  uuid:
+    value: id
+  title:
+    value: title
+storage_client_id: MongoClient
+storage_client_config:
+  endpoint: 'mongodb://candidate:PrototypeRocks123654@ds345028.mlab.com:45028/star-wars'
+persistent_cache_max_age: 300
+annotation_entity_type_id: null
+annotation_bundle_id: null
+annotation_field_name: null
+inherits_annotation_fields: false

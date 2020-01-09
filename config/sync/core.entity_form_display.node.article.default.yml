@@ -6,14 +6,15 @@ dependencies:
     - field.field.node.article.body
     - field.field.node.article.comment
     - field.field.node.article.field_image
+    - field.field.node.article.field_social_media
     - field.field.node.article.field_tags
     - image.style.thumbnail
     - node.type.article
-    - workflows.workflow.editorial
   module:
     - comment
     - content_moderation
     - image
+    - paragraphs
     - path
     - text
 _core:
@@ -31,6 +32,7 @@ content:
       rows: 9
       summary_rows: 3
       placeholder: ''
+      show_summary: false
     third_party_settings: {  }
   comment:
     type: comment_default
@@ -52,6 +54,18 @@ content:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
+  field_social_media:
+    type: entity_reference_paragraphs
+    weight: 121
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
   field_tags:
     type: entity_reference_autocomplete_tags
     weight: 3
@@ -60,6 +74,7 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
@@ -110,5 +125,6 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     third_party_settings: {  }
 hidden: {  }

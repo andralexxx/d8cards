@@ -1,0 +1,7 @@
+some_text: 'Some text'
+custom_select: three
+custom_radio: null
+custom_yes: 'on'
+custom_no: 'on'
+custom_text: 'Some text'
+custom_radios: 'No'
