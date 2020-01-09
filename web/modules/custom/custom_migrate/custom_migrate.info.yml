@@ -1,0 +1,10 @@
+name: 'Custom Migrate'
+type: module
+description: 'D8 Cards Day4. Migrate movies'
+core: 8.x
+package: 'Custom'
+dependencies:
+  - migrate
+  - migrate_source_csv
+  - migrate_plus
+  - migrate_tools
