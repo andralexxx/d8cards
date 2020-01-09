@@ -1,0 +1,9 @@
+custom.custom_config_form:
+  path: '/mymodule/config'
+  defaults:
+    _form: '\Drupal\custom\Form\CustomConfigForm'
+    _title: 'CustomConfigForm'
+  requirements:
+    _permission: 'administer custom'
+  options:
+    _admin_route: TRUE

@@ -1,0 +1,3 @@
+administer custom:
+  title: 'Administer custom'
+  description: 'Allow acces to custom module settings'

@@ -1,0 +1,12 @@
+{
+    "name": "custom",
+    "type": "drupal-module",
+    "description": "My Awesome Module",
+    "keywords": [],
+    "homepage": "https://www.drupal.org/project/custom",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/custom",
+        "source": "http://cgit.drupalcode.org/custom"
+    }
+}
