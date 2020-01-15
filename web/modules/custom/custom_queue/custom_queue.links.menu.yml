@@ -1,0 +1,6 @@
+custom_queue.custom_queue_config_form:
+  title: 'Custom Queue'
+  route_name: custom_queue.custom_queue_config_form
+  description: 'Configure subject ant text for email.'
+  parent: system.admin_config_system
+  weight: 99

@@ -1,0 +1,25 @@
+uuid: a46cebf6-f0f4-4ee6-8347-5fbd9ab218b1
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:stock_exchange_rate_card:c4f46c64-320a-4c11-b6f5-cfb88039f40c'
+  module:
+    - block_content
+  theme:
+    - bootstrap
+id: twitterinc.
+theme: bootstrap
+region: sidebar_second
+weight: -5
+provider: null
+plugin: 'block_content:c4f46c64-320a-4c11-b6f5-cfb88039f40c'
+settings:
+  id: 'block_content:c4f46c64-320a-4c11-b6f5-cfb88039f40c'
+  label: 'Twitter, Inc.'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,4 +1,4 @@
-uuid: a2f27e44-fc3b-4279-8754-ff889592d4e7
+uuid: 7f89f6e7-f172-4e8b-a5d7-f5bd367598f0
 langcode: en
 status: true
 dependencies:
@@ -8,6 +8,8 @@ dependencies:
     - field.field.block_content.stock_exchange_rate_card.field_company_name
     - field.field.block_content.stock_exchange_rate_card.field_last_price
     - field.field.block_content.stock_exchange_rate_card.field_symbol
+_core:
+  default_config_hash: iUE6GdAPHME2iVggt5yQJQWpcYjwPO8TWctaYN6NOLY
 id: block_content.stock_exchange_rate_card.default
 targetEntityType: block_content
 bundle: stock_exchange_rate_card

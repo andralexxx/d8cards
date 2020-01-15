@@ -1,0 +1,60 @@
+<?php
+
+/**
+ * @file
+ * Contains custom_queue.module.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Queue\QueueFactory;
+use Drupal\Core\Queue\QueueInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function custom_queue_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the custom_queue module.
+    case 'help.page.custom_queue':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Sends a welcome email to registered users.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_entity_insert().
+ */
+function custom_queue_entity_insert(EntityInterface $entity) {
+  if ($entity->getEntityTypeId() !== 'user') {
+    return;
+  }
+
+  /** @var QueueFactory $queue_factory */
+  $queue_factory = \Drupal::service('queue');
+  /** @var QueueInterface $queue */
+  $queue = $queue_factory->get('custom_queue');
+  $item = new \stdClass();
+  $item->uid = $entity->id();
+  $queue->createItem($item);
+}
+
+/**
+ * Implements hook_mail().
+ */
+function custom_queue_mail($key, &$message, $params) {
+  /** @var \Drupal\Core\Config\ConfigFactory $config */
+  $config = \Drupal::service('config.factory')->get('custom_queue.settings');
+
+  switch ($key) {
+    case 'welcome_mail':
+      $message['from'] = \Drupal::config('system.site')->get('mail');
+      $message['subject'] = $config->get('subject');
+      $message['body'][] = $config->get('message_text');
+      break;
+  }
+}

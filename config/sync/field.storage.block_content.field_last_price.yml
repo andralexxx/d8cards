@@ -1,9 +1,11 @@
-uuid: f72435d4-8f16-4261-affb-f0a30142f290
+uuid: 5f3a717b-fe53-4c1f-ba67-bc551ab03d15
 langcode: en
 status: true
 dependencies:
   module:
     - block_content
+_core:
+  default_config_hash: pjDBG_xiYxdeX2Qv2d4vLOENn7c59JuerlphcUSPutA
 id: block_content.field_last_price
 field_name: field_last_price
 entity_type: block_content

@@ -13,15 +13,19 @@ module:
   contact: 0
   content_moderation: 0
   contextual: 0
+  cron_example: 0
   custom: 0
+  custom_blocks: 0
   custom_migrate: 0
-  custom_mongodb: 0
+  custom_queue: 0
   datetime: 0
   dblog: 0
   devel: 0
+  dino_roar: 0
   dynamic_page_cache: 0
   editor: 0
   entity_reference_revisions: 0
+  examples: 0
   external_entities: 0
   field: 0
   field_ui: 0
@@ -61,6 +65,7 @@ module:
   update: 0
   user: 0
   views_ui: 0
+  webprofiler: 0
   workflows: 0
   menu_link_content: 1
   views: 10

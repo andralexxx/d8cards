@@ -1,10 +1,12 @@
-uuid: a348062a-4f0c-48f8-a4d7-efeceebc3a04
+uuid: 5b0cef66-8404-4989-a6bb-90c8b5bfcfe6
 langcode: en
 status: true
 dependencies:
   config:
     - block_content.type.stock_exchange_rate_card
     - field.storage.block_content.field_last_price
+_core:
+  default_config_hash: fnNJ3e__HfFMRuV1XY41C_CXp_q-F6JNMA0QbOVtuvY
 id: block_content.stock_exchange_rate_card.field_last_price
 field_name: field_last_price
 entity_type: block_content

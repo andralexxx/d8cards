@@ -1,0 +1,25 @@
+uuid: acb8924d-7afa-41f3-b950-cc890be73ca0
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:stock_exchange_rate_card:0bd8e16f-010d-4e08-9bef-647116338009'
+  module:
+    - block_content
+  theme:
+    - bootstrap
+id: vodafonegroupplc
+theme: bootstrap
+region: sidebar_second
+weight: -4
+provider: null
+plugin: 'block_content:0bd8e16f-010d-4e08-9bef-647116338009'
+settings:
+  id: 'block_content:0bd8e16f-010d-4e08-9bef-647116338009'
+  label: 'Vodafone Group plc'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

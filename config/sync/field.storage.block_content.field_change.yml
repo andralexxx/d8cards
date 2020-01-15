@@ -1,9 +1,11 @@
-uuid: 13c659fd-0f63-43d3-ad5c-2abe3d214f87
+uuid: 9cbddfb8-69d1-403f-8c09-644281fecf88
 langcode: en
 status: true
 dependencies:
   module:
     - block_content
+_core:
+  default_config_hash: KAx7Wdo3qe8HXuc5CaCsSTUhUjTEcTNJjwVwIdPYPe4
 id: block_content.field_change
 field_name: field_change
 entity_type: block_content

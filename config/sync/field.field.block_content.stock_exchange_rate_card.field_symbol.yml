@@ -1,10 +1,12 @@
-uuid: c013da6e-b766-4807-86f2-d0c967ad1295
+uuid: 91b840da-2ba2-4c3a-9548-2bef53210bbf
 langcode: en
 status: true
 dependencies:
   config:
     - block_content.type.stock_exchange_rate_card
     - field.storage.block_content.field_symbol
+_core:
+  default_config_hash: 5Lrefhj76QjQNSBIVdjPVDubtthpIdkqeqP2LBMkrlk
 id: block_content.stock_exchange_rate_card.field_symbol
 field_name: field_symbol
 entity_type: block_content

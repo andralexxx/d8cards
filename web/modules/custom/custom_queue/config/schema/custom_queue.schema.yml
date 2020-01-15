@@ -1,0 +1,10 @@
+custom_queue.settings:
+  type: config_object
+  mapping:
+    subject:
+      type: label
+      label: 'Email subject'
+    message_text:
+      type: text
+      label: 'Default mail body text'
+

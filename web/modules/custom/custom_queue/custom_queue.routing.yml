@@ -1,0 +1,7 @@
+custom_queue.custom_queue_config_form:
+  path: '/admin/config/custom_queue'
+  defaults:
+    _form: '\Drupal\custom_queue\Form\CustomQueueConfigForm'
+    _title: 'Custom Queue Settings'
+  requirements:
+    _permission: 'administer site configuration'

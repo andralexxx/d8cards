@@ -1,7 +1,9 @@
-uuid: 1db6abbf-570f-48ab-8a4c-140b59a647f1
+uuid: a1e2b389-2be4-491a-a884-b57fc8a5dd0b
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: 15RomflvB1Q2dvGtX7_7eROTxg-TD-xyc1kp1_jI6IE
 id: stock_exchange_rate_card
 label: 'Stock Exchange Rate Card'
 revision: 1
