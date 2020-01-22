@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - custom_text_filter
     - editor
 _core:
   default_config_hash: P8ddpAIKtawJDi5SzOwCzVnnNYqONewSTJ6Xn0dW_aQ
@@ -43,3 +44,10 @@ filters:
     status: true
     weight: 11
     settings: {  }
+  auto_capitalize:
+    id: auto_capitalize
+    provider: custom_text_filter
+    status: true
+    weight: 0
+    settings:
+      words_list: 'drupal, wordpress, joomla'

@@ -1,0 +1,5 @@
+name: 'Custom Text Filter'
+type: module
+description: 'Custom Text filter using the Plugin system'
+core: 8.x
+package: 'Custom'

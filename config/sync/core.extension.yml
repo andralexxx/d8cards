@@ -18,6 +18,7 @@ module:
   custom_blocks: 0
   custom_migrate: 0
   custom_queue: 0
+  custom_text_filter: 0
   datetime: 0
   dblog: 0
   devel: 0

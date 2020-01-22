@@ -1,8 +1,17 @@
 uuid: d0ccc2c0-5afa-4668-adba-788253df5daf
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - custom_text_filter
 name: Raw
 format: raw
 weight: 0
-filters: {  }
+filters:
+  auto_capitalize:
+    id: auto_capitalize
+    provider: custom_text_filter
+    status: true
+    weight: 0
+    settings:
+      words_list: 'drupal, wordpress, joomla'
