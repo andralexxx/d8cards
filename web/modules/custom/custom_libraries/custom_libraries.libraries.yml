@@ -1,0 +1,8 @@
+custom.css:
+  css:
+    theme:
+      css/custom-libraries-theme.css: {}
+
+custom.js:
+  js:
+    js/custom-libraries.js: {}

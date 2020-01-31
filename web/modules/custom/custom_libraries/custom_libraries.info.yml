@@ -1,0 +1,7 @@
+name: 'Custom Libraries'
+type: module
+description: 'Attaching assets (css/js) on D8'
+core: 8.x
+package: 'Custom'
+dependencies:
+  - custom_blocks

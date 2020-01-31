@@ -1,0 +1,50 @@
+<?php
+
+/**
+ * @file
+ * Contains custom_libraries.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function custom_libraries_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the custom_libraries module.
+    case 'help.page.custom_libraries':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Attaching assets (css/js) on D8') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_element_info_alter().
+ */
+function custom_libraries_element_info_alter(array &$types) {
+  if (isset($types['table'])) {
+    $types['table']['#attached']['library'][] = 'custom_libraries/custom.css';
+  }
+}
+
+/**
+ * Implements hook_block_build_alter().
+ */
+/**
+ * Implements hook_block_view_alter().
+ */
+function custom_libraries_block_view_alter(array &$build, \Drupal\Core\Block\BlockPluginInterface $block) {
+  $definition = $block->getPluginDefinition();
+
+  if ($block->getBaseId() === 'block_content'
+    && !empty($definition['config_dependencies']['content'][0])
+    && mb_stripos($definition['config_dependencies']['content'][0], 'stock_exchange_rate_card')
+  ) {
+    $build['#attached']['library'][] = 'custom_libraries/custom.js';
+  }
+}
