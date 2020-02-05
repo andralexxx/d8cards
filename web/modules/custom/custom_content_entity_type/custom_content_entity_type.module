@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * Contains custom_content_entity_type.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function custom_content_entity_type_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the custom_content_entity_type module.
+    case 'help.page.custom_content_entity_type':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('­ Creating a Custom D8 Content Entity Type') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function custom_content_entity_type_theme() {
+  $theme = [];
+  $theme['contact'] = [
+    'render element' => 'elements',
+    'file' => 'contact.page.inc',
+    'template' => 'contact',
+  ];
+  $theme['contact_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'contact.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function custom_content_entity_type_theme_suggestions_contact(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#contact'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'contact__' . $sanitized_view_mode;
+  $suggestions[] = 'contact__' . $entity->bundle();
+  $suggestions[] = 'contact__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'contact__' . $entity->id();
+  $suggestions[] = 'contact__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}

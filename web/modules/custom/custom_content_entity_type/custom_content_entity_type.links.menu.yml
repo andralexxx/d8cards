@@ -1,0 +1,19 @@
+
+# Contact type menu items definition
+entity.contact_type.collection:
+  title: 'Contact types'
+  route_name: entity.contact_type.collection
+  description: 'List Contact type (bundles)'
+  parent: system.admin_structure
+  weight: 0
+
+# Contact menu items definition
+entity.contact.collection:
+  title: 'Contact list'
+  route_name: entity.contact.collection
+  description: 'List Contact entities'
+  parent: system.admin_content
+  weight: 0
+
+
+

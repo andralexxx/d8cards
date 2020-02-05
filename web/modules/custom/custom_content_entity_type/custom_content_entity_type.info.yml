@@ -1,0 +1,7 @@
+name: 'Custom Content Entity Type'
+type: module
+description: 'Creating a Custom D8 Content Entity Type'
+core: 8.x
+package: 'Custom'
+dependencies:
+  - entity_reference
