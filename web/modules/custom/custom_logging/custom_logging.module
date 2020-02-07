@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * Contains custom_logging.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function custom_logging_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the custom_logging module.
+    case 'help.page.custom_logging':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Day 13 ­ Logging in D8') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_update().
+ */
+function custom_logging_node_update(Drupal\Core\Entity\EntityInterface $entity) {
+  \Drupal::logger('Node Updates')
+    ->notice('Node with title %title of type %type has been updated',
+      [
+        '%title' => $entity->label(),
+        '%type' => $entity->bundle(),
+      ]);
+}
