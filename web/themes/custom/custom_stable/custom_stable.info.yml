@@ -1,0 +1,14 @@
+name: Custom Strable
+type: theme
+description: 'Day 12- Theming 101'
+package: Other
+core: 8.x
+libraries:
+  - custom_stable/global-styling
+ 
+base theme: stable
+
+regions:
+  content: Content
+  sidebar1: Sidebar 1
+  sidebar2: Sidebar 2
