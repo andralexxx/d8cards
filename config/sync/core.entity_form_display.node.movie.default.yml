@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.movie.field_actors
     - field.field.node.movie.field_genre
     - field.field.node.movie.field_image
+    - field.field.node.movie.field_rating
     - image.style.thumbnail
     - node.type.movie
   module:
@@ -62,6 +63,13 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+    region: content
+  field_rating:
+    weight: 125
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
     region: content
   moderation_state:
     type: moderation_state_default

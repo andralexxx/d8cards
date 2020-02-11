@@ -1,0 +1,25 @@
+uuid: 6289356e-4233-4e47-a7bf-a42377ab92f0
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:stock_exchange_rate_card:ef7921a3-f452-4fc5-bcf5-8ec72786ad59'
+  module:
+    - block_content
+  theme:
+    - custom_stable
+id: custom_stable_snapinc.
+theme: custom_stable
+region: sidebar2
+weight: 2
+provider: null
+plugin: 'block_content:ef7921a3-f452-4fc5-bcf5-8ec72786ad59'
+settings:
+  id: 'block_content:ef7921a3-f452-4fc5-bcf5-8ec72786ad59'
+  label: 'Snap Inc.'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

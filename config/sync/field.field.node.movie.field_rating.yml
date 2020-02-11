@@ -1,0 +1,25 @@
+uuid: c626b564-0018-4c06-916d-cba66b0b49c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rating
+    - node.type.movie
+id: node.movie.field_rating
+field_name: field_rating
+entity_type: node
+bundle: movie
+label: Rating
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: !!float 0
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: !!float 5
+  prefix: ''
+  suffix: ''
+field_type: decimal

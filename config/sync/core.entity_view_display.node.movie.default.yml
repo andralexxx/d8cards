@@ -7,8 +7,10 @@ dependencies:
     - field.field.node.movie.field_actors
     - field.field.node.movie.field_genre
     - field.field.node.movie.field_image
+    - field.field.node.movie.field_rating
     - node.type.movie
   module:
+    - custom_field_formatter
     - image
     - text
     - user
@@ -49,9 +51,16 @@ content:
     third_party_settings: {  }
     type: image
     region: content
-  links:
-    weight: 100
+  field_rating:
+    weight: 105
+    label: above
     settings: {  }
     third_party_settings: {  }
+    type: stars_rating_formatter
     region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden: {  }

@@ -1,0 +1,4 @@
+custom_rating:
+  css:
+    theme:
+      css/custom-rating-theme.css: {}
