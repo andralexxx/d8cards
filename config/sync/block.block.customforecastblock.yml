@@ -1,0 +1,22 @@
+uuid: 6adf11ec-a7c7-49f6-abdf-f1c766d30536
+langcode: en
+status: true
+dependencies:
+  module:
+    - custom_composer
+  theme:
+    - bootstrap
+id: customforecastblock
+theme: bootstrap
+region: highlighted
+weight: -8
+provider: null
+plugin: custom_forecast_block
+settings:
+  id: custom_forecast_block
+  label: GeoBlock
+  provider: custom_composer
+  label_display: visible
+  longitude: '-122.423'
+  latitude: '37.8267'
+visibility: {  }

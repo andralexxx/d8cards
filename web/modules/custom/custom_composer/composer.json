@@ -1,0 +1,16 @@
+{
+    "name": "custom_composer",
+    "type": "drupal-module",
+    "description": "Composer in the module to load PHP libraries",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/custom_composer",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/custom_composer",
+        "source": "http://cgit.drupalcode.org/custom_composer"
+    },
+    "require": {
+        "guhelski/forecast-php": "^1.0"
+    }
+}

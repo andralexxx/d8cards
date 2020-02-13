@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains custom_composer.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function custom_composer_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the custom_composer module.
+    case 'help.page.custom_composer':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Composer in your module to load PHP libraries') . '</p>';
+      return $output;
+
+    default:
+  }
+}

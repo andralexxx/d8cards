@@ -1,0 +1,5 @@
+name: 'Custom Composer'
+type: module
+description: 'Composer in the module to load PHP libraries'
+core: 8.x
+package: 'Custom'
