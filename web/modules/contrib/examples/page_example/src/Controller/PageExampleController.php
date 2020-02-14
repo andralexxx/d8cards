@@ -3,8 +3,6 @@
 namespace Drupal\page_example\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\Core\Logger\LoggerChannelFactoryInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Drupal\examples\Utility\DescriptionTemplateTrait;
 
@@ -14,30 +12,6 @@ use Drupal\examples\Utility\DescriptionTemplateTrait;
 class PageExampleController extends ControllerBase {
 
   use DescriptionTemplateTrait;
-
-  /**
-   * Logger factory service.
-   *
-   * @var \Drupal\Core\Logger\LoggerChannelFactoryInterface
-   */
-  protected $loggerFactory;
-
-  /**
-   * PageExampleController constructor.
-   *
-   * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $loggerFactory
-   *   Logger factory service.
-   */
-  public function __construct(LoggerChannelFactoryInterface $loggerFactory) {
-    $this->loggerFactory = $loggerFactory;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function create(ContainerInterface $container) {
-    return new static($container->get('logger.factory'));
-  }
 
   /**
    * {@inheritdoc}
@@ -57,7 +31,6 @@ class PageExampleController extends ControllerBase {
    * appropriate blocks, navigation, and styling.
    */
   public function simple() {
-    $this->loggerFactory->get('page_example_module')->notice('Simple Page was displayed. Yay! Now logging the DI way!!!');
     return [
       '#markup' => '<p>' . $this->t('Simple page: The quick brown fox jumps over the lazy dog.') . '</p>',
     ];

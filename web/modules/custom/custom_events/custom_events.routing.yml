@@ -1,0 +1,8 @@
+
+custom_events.simple_controller_simple:
+  path: '/custom_events/simple'
+  defaults:
+    _controller: '\Drupal\custom_events\Controller\SimpleController::simple'
+    _title: 'Simple page'
+  requirements:
+    _permission: 'access content'

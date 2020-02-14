@@ -18,6 +18,7 @@ module:
   custom_blocks: 0
   custom_composer: 0
   custom_content_entity_type: 0
+  custom_events: 0
   custom_field_formatter: 0
   custom_libraries: 0
   custom_logging: 0

@@ -1,0 +1,5 @@
+name: 'Custom Events'
+type: module
+description: 'Events and Subscribers'
+core: 8.x
+package: 'Custom'

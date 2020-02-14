@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains custom_events.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function custom_events_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the custom_events module.
+    case 'help.page.custom_events':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('­ Events and Subscribers') . '</p>';
+      return $output;
+
+    default:
+  }
+}
