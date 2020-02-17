@@ -1,0 +1,26 @@
+{#{{ dump() }}#}
+
+{% set niceclasses = [] %}
+
+{% for class in classes %}
+  {% set niceclasses = niceclasses|merge([class|clean_class]) %}
+{% endfor %}
+
+{% if var1 %}
+  <span{{ attributes.addClass(niceclasses) }}>
+    Variable 1 value is {{ var1 }}
+  </span>
+{% endif %}
+
+<div>
+  Value of 3.g element of var2 (ie $var2[3]['g'] ) is {{ var2.3.g }}
+</div>
+
+{% set divclasses = [] %}
+{% for i in 0..myclasscount %}
+  {% set divclasses = divclasses|merge([('minion'~i)|clean_class]) %}
+{% endfor %}
+
+<div{{ attributes.removeClass(niceclasses).addClass(divclasses) }}>
+  Printing a translatable string - {{ 'Hello'|t }}
+</div>

@@ -1,0 +1,20 @@
+uuid: 4f6915e4-8748-4d38-8046-d3ac124f0b4b
+langcode: en
+status: true
+dependencies:
+  module:
+    - day19
+  theme:
+    - bootstrap
+id: myblock
+theme: bootstrap
+region: highlighted
+weight: -9
+provider: null
+plugin: my_block
+settings:
+  id: my_block
+  label: 'Day19 block'
+  provider: day19
+  label_display: visible
+visibility: {  }

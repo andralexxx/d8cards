@@ -26,6 +26,7 @@ module:
   custom_queue: 0
   custom_text_filter: 0
   datetime: 0
+  day19: 0
   dblog: 0
   devel: 0
   dino_roar: 0
