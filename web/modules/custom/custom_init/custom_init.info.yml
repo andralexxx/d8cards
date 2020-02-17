@@ -1,0 +1,5 @@
+name: 'Custom Init'
+type: module
+description: 'Replacing hook_init / Doing something on every page'
+core: 8.x
+package: 'Custom'

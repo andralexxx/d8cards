@@ -21,6 +21,7 @@ module:
   custom_content_entity_type: 0
   custom_events: 0
   custom_field_formatter: 0
+  custom_init: 0
   custom_libraries: 0
   custom_logging: 0
   custom_migrate: 0

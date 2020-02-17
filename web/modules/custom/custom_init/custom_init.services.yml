@@ -1,0 +1,7 @@
+services:
+  cors.allow_access_origin:
+    class: Drupal\custom_init\EventSubscriber\CustomInitSubscriber
+    arguments:
+      - '@current_user'
+    tags:
+      - { name: event_subscriber }
