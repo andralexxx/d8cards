@@ -1,0 +1,20 @@
+uuid: b322e527-1bb5-48e2-9fd4-2ec22c64af95
+langcode: en
+status: true
+dependencies:
+  module:
+    - custom_cache
+  theme:
+    - bootstrap
+id: customcacheblock_2
+theme: bootstrap
+region: content
+weight: 0
+provider: null
+plugin: custom_cache_block
+settings:
+  id: custom_cache_block
+  label: 'Custom Cache Block'
+  provider: custom_cache
+  label_display: visible
+visibility: {  }

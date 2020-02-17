@@ -1,0 +1,5 @@
+name: 'Custom Cache'
+type: module
+description: '­ Cache API and Cache Tags'
+core: 8.x
+package: 'Custom'
